@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  html-service:
+    image: nginx:alpine  # Use a lightweight Nginx image
+    volumes:
+      - ./html:/usr/share/nginx/html  # Mount the html directory
+    networks:
+      - my-network
+  
+  # http://localhost
+  nginx:
+    image: nginx:alpine
+    ports:
+      - "80:80"  # Expose Nginx on port 80
+    volumes:
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf  # Use custom Nginx configuration
+    networks:
+      - my-network
+
+networks:
+  my-network:
+    driver: bridge
