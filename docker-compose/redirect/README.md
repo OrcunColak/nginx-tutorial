@@ -1,0 +1,1 @@
+This example redirects http request to https request 

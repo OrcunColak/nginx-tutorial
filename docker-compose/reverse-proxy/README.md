@@ -1,0 +1,1 @@
+This example proxy passes (or forwards) incoming web traffic to other machines or ports within the same machine. 
